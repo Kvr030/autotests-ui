@@ -7,9 +7,7 @@ with sync_playwright() as p:
 
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login')
 
-    login_button = page.get_by_test_id('login-page-login-button')
-    expect(login_button).to_be_disabled()
+    registration_link = page.get_by_test_id("login-page-registration-link")
+    registration_link.hover()
 
     page.wait_for_timeout(3000)
-
-

@@ -16,4 +16,4 @@ with sync_playwright() as playwright:
     title.textContent = 'New Text';
     """)
 
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(3000)
