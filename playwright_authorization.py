@@ -5,8 +5,7 @@ with sync_playwright() as playwright:
     page = browser.new_page()
 
     # Необходимо написать скрипт, который откроет страницу https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login
-    page.goto(
-        "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
+    page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
 
     # Заполнит поле "Email" значением user.name@gmail.com
     email_input = page.get_by_test_id('login-form-email-input').locator('input')

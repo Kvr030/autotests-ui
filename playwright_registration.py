@@ -5,21 +5,18 @@ with sync_playwright() as playwright:
     page = browser.new_page()
 
     # Откроет страницу https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration
-    page.goto(
-        "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
+    page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
 
     # Заполнит поле "Email" значением "user.name@gmail.com"
     email_input = page.get_by_test_id('registration-form-email-input').locator('input')
     email_input.fill("user.name@gmail.com")
 
     # Заполнит поле "Username" значением "username"
-    username_input = page.get_by_test_id('registration-form-username-input').locator(
-        'input')
+    username_input = page.get_by_test_id('registration-form-username-input').locator('input')
     username_input.fill("username")
 
     # Заполнит поле "Password" значением "password"
-    password_input = page.get_by_test_id('registration-form-password-input').locator(
-        'input')
+    password_input = page.get_by_test_id('registration-form-password-input').locator('input')
     password_input.fill("password")
 
     # Нажмет на кнопку "Registration". После нажатия кнопки "Registration" произойдет редирект на страницу "Dashboard"
