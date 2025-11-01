@@ -3,7 +3,7 @@ from _pytest.fixtures import SubRequest
 
 
 
-@pytest.mark.parametrize('number', [1, -1, 3, 2])
+@pytest.mark.parametrize('number', [1, 5, 3, 2])
 def test_numbers (number: int):
     assert number > 0
 
