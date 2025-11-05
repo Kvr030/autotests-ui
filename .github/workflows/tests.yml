@@ -36,7 +36,7 @@ jobs:
       # 4. Шаг для запуска тестов с использованием pytest и генерации отчётов Allure
       - name: Run Playwright tests with pytest and generate Allure results
         run: |
-          pytest -m regression --alluredir=allure-results 
+          pytest -m regression --alluredir=allure-results --numprocesses 2 
 
       # 5. Шаг для получения истории отчётов Allure, если она существует
       - name: Get Allure history
@@ -49,7 +49,7 @@ jobs:
 
       # 6. Шаг для генерации и отображения отчёта Allure
       - name: Generates Allure Report with history
-        uses: simple-elf/allure-report-action@v1.8  # Используем готовое решение из GitHub Marketplace для генерации Allure отчёта
+        uses: simple-elf/allure-report-action@v1.7  # Используем готовое решение из GitHub Marketplace для генерации Allure отчёта
         if: always()  # Этот шаг тоже всегда выполняется
         with:
           allure_results: allure-results  # Указываем каталог с результатами тестов
