@@ -26,6 +26,10 @@ allure-results/
 allure-report/
 pytest_cache/
 .coverage
+*.html
+*.json
+videos
+tracing
 
 # Large files
 chromium-webkit-firefox/index.html
