@@ -31,15 +31,8 @@ jobs:
         run: |
           pytest -m regression --alluredir=allure-results
 
-      - name: Generate Allure Report
-        uses: MarceloPrado/allure-report-action@v1.7
+      - name: Generate and Publish Allure Report
+        uses: allure-framework/allure-deploy@v1
         with:
           allure_results: allure-results
-          output_path: allure-report
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./allure-report
+          gh_pages: gh-pages
