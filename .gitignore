@@ -1,35 +1,16 @@
-# Добавьте это содержимое в .gitignore
-# Virtual Environment
-.venv/
-venv/
-env/
+# pycharm
+.idea
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# python
+.venv
+__pycache__
 
-# OS
-.DS_Store
-Thumbs.db
+# allure
+allure-results
+allure-report
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-
-# Testing
-allure-results/
-allure-report/
-pytest_cache/
-.coverage
+# testing artifacts
 *.html
 *.json
 videos
 tracing
-
-# Large files
-chromium-webkit-firefox/index.html
