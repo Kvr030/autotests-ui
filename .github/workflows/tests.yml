@@ -31,25 +31,15 @@ jobs:
         run: |
           pytest -m regression --alluredir=allure-results
 
-      - name: Get Allure history
-        uses: actions/checkout@v4
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Build allure report
-        uses: simple-elf/allure-report-action@v1.12
-        if: always()
+      - name: Generate Allure Report
+        uses: MarceloPrado/allure-report-action@v1.7
         with:
           allure_results: allure-results
-          allure_history: allure-history
+          output_path: allure-report
 
       - name: Deploy to GitHub Pages
-        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./allure-history
+          publish_dir: ./allure-report
